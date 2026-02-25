@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Picture Box</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#111;
+color:white;
+transition:0.3s;
+}
+
+/* LIGHT MODE */
+body.light{
+background:white;
+color:black;
+}
+
+/* TOP BAR */
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+background:black;
+position:fixed;
+width:100%;
+top:0;
+z-index:5;
+}
+
+body.light .topbar{
+background:white;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:red;
+}
+
+/* TOGGLE BUTTON */
+
+.toggleBtn{
+padding:10px 20px;
+border:none;
+background:red;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* HERO SECTION */
+
+.hero{
+
+margin-top:70px;
+height:300px;
+
+background-image:url("https://picsum.photos/1600/900");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:40px;
+font-weight:bold;
+
+}
+
+/* GALLERY */
+
+.gallery{
+
+padding:20px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+}
+
+/* CARD */
+
+.card{
+
+background:#222;
+
+border-radius:10px;
+
+padding:10px;
+
+text-align:center;
+
+}
+
+body.light .card{
+background:#eee;
+}
+
+/* IMAGE */
+
+.card img{
+
+width:100%;
+border-radius:8px;
+
+}
+
+/* DOWNLOAD */
+
+.download{
+
+margin-top:10px;
+
+padding:8px 15px;
+
+background:red;
+
+color:white;
+
+border:none;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="logo">
+Picture Box
+</div>
+
+<button class="toggleBtn"
+onclick="toggleMode()">
+Toggle Mode
+</button>
+
+</div>
+
+<div class="hero">
+Picture Gallery
+</div>
+
+<div class="gallery">
+
+<!-- 10 IMAGES -->
+
+<script>
+
+for(let i=1;i<=10;i++){
+
+document.write(`
+
+<div class="card">
+
+<img src="https://picsum.photos/300/200?random=${i}">
+
+<br>
+
+<a href="https://picsum.photos/800/600?random=${i}" download>
+
+<button class="download">
+Download
+</button>
+
+</a>
+
+</div>
+
+`)
+
+}
+
+</script>
+
+</div>
+
+<script>
+
+/* DARK LIGHT TOGGLE */
+
+function toggleMode(){
+
+document.body.classList.toggle("light");
+
+}
+
+/* MOVING BACKGROUND */
+
+document.addEventListener("mousemove", e=>{
+
+let x=e.clientX/window.innerWidth*30;
+let y=e.clientY/window.innerHeight*30;
+
+document.querySelector(".hero").style.backgroundPosition =
+x+"px "+y+"px";
+
+});
+
+/* MOBILE TOUCH */
+
+document.addEventListener("touchmove", e=>{
+
+let t=e.touches[0];
+
+let x=t.clientX/window.innerWidth*30;
+let y=t.clientY/window.innerHeight*30;
+
+document.querySelector(".hero").style.backgroundPosition =
+x+"px "+y+"px";
+
+});
+
+</script>
+
+</body>
+</html>um.photos/300/200?8">
+<a href="https://picsum.photos/1200/800?8" download>
+<button>Download</button>
+</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?9">
+<a href="https://picsum.photos/1200/800?9" download>
+<button>Download</button>
+</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?10">
+<a href="https://picsum.photos/1200/800?10" download>
+<button>Download</button>
+</a>
+</div>
+
+</div>
+
+
+</body>
+</html>/picsum.photos/1200/800?10" download>
+<button>Download</button>
+</a>
+</div>
+
+
+
+</div>
+
+
+
+<footer>
+
+Picture Box Gallery
+
+</footer>
+
+
+
+</body>
+</html>>
+<button class="downloadBtn">Download</button>
+</a>
+</div>
+
+
+<div class="card">
+<img src="https://picsum.photos/200/300?9">
+<a href="https://picsum.photos/200/300?9" download>
+<button class="downloadBtn">Download</button>
+</a>
+</div>
+
+
+<div class="card">
+<img src="https://picsum.photos/200/300?10">
+<a href="https://picsum.photos/200/300?10" download>
+<button class="downloadBtn">Download</button>
+</a>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+function toggleMode(){
+
+document.body.classList.toggle("light")
+
+}
+
+</script>
+
+
+</body>
+</html>assList.toggle("light")
+}
+
+
+/* MOVING BACKGROUND EFFECT */
+
+document.addEventListener("mousemove", e => {
+
+let x = e.clientX / window.innerWidth * 40;
+let y = e.clientY / window.innerHeight * 40;
+
+document.body.style.backgroundPosition =
+x + "px " + y + "px";
+
+});
+
+
+/* MOBILE TOUCH MOVEMENT */
+
+document.addEventListener("touchmove", e => {
+
+let touch = e.touches[0];
+
+let x = touch.clientX / window.innerWidth * 40;
+let y = touch.clientY / window.innerHeight * 40;
+
+document.body.style.backgroundPosition =
+x + "px " + y + "px";
+
+});
+
+</script>
+
+
+</body>
+</html>
